@@ -21,37 +21,49 @@ function countdown() {
 var slideIndex = 1; // declare slideIndex, initialize index to 1
 showSlides(slideIndex); // call showSlides function with passed in value
 
-// next and previous controls
+// next and previous control function
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+    // call showSlides function with passed in value where slideIndex = slideIndex + n
+    showSlides(slideIndex += n); 
 }
 
 // thumbnail image controls
 function currentSlide(n) {
+    // call showSlides function with passed in value where slideIndex = n
     showSlides(slideIndex = n);
 }
 
+// slideshow function that continues to iterate through slides 
 function showSlides(n) {
     var i; // index variable
+
+    // declare variables that correspond to each element with matching classname
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
+
+    // if n > total # of slides, start back at 1
     if(n > slides.length) {
         slideIndex = 1
     }
+
+    // if n < 1, set slideIndex to # of slides
     if(n < 1) {
         slideIndex = slides.length
     }
 
+    // iterate through slides
     for(i = 0; i < slides.length; i++)
     {
         slides[i].style.display = "none";
     }
 
+    // iterate through dots and change " active" dot to current slide #
     for(i = 0; i < dots.length; i++){
         dots[i].className = dots[i].className.replace(" active", "");
 
     }
 
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+  
+    slides[slideIndex-1].style.display = "block"; // display slide
+    dots[slideIndex-1].className += " active"; // display " active" dot
 }
