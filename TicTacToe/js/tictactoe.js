@@ -1,6 +1,6 @@
-// This variable keeps track of whose turn it is
+// keeps track of player's turn
 let activePlayer = 'X';
-// This array stores an array of moves. We use this to determine win conditions.
+// stores an array of moves. We use this to determine win conditions.
 let selectedSquares = [];
 
 // This function is for placing an x or o in a square
@@ -30,7 +30,7 @@ function placeXOrO(squareNumber)
         // squareNumber and activePlayer are concatenated together and added to array
         selectedSquares.push(squareNumber + activePlayer);
         
-        // this calls a function to check for any win conditions
+        //check for any win conditions
         checkWinConditions();
         
         // condition to change the active player
