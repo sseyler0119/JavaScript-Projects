@@ -1,0 +1,517 @@
+html {
+    font-family: sans-serif;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.42857143;
+    color: #e2e8eb;
+    background-color: #000;
+}
+
+footer,
+nav {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    line-height: 50px;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 2pt;
+    text-transform: uppercase;
+    text-align: center;
+    color: #C6DE41;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+
+h1::after {
+    display:block;
+    content: "";
+    height: 2px;
+    width: 150px;
+    background:  #C6DE41;
+    margin: 5px auto 40px;
+    box-shadow: 5px 2px 3px rgba(0,0,0,0.5);
+}
+
+h2 {
+    line-height: 50px;
+    color: #C6DE41;
+}
+
+h3 {
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+h4 {
+    padding-top: 25px;
+    line-height: 40px;
+    padding-bottom: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+p {
+    font-weight: 300;
+    line-height: 30px;
+    padding-bottom: 15px;
+}
+
+section {
+    padding-top: 50px;
+    margin-top: 50px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.wrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top:0;
+    left:0;
+    text-align: center;
+}
+
+.menu-container {
+    max-height: 340px;
+    margin: 0% auto;
+    content: " ";
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.heading-padding {
+    padding-bottom: 40px;
+}
+
+/*******************************
+        MENU SELECTION ANIMATION
+**********************************/
+.menu {
+    color: #E1E8EB;
+    font: bold 12px/18px sans-serif;
+    text-align: center;
+    display: inline;
+    margin: 0% auto;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.menu li {
+   color: #C6DE41;
+   background-color: #424549; 
+   display: inline-block;
+   margin-left: 5px;
+   margin-right: 5px;
+   width: 65px;
+   position: relative;
+   padding: 15px;
+   border: 1px solid #C6DE41;
+   box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.5);
+   border-radius: 6px;
+   cursor: pointer;
+   transition-property: background;
+   transition-duration: 0.4s;
+   transition-delay: 0s;
+   transition-timing-function: ease-in-out;
+}
+
+.menu li:hover {
+    
+    color:rgb(45, 110, 126);
+    background-color: #E1E8EB;
+}
+
+/*****************************
+     HOME SECTION STYLES 
+******************************/
+
+#home {
+    background: url(../images/dog-wallpaper-99862.jpg) no-repeat 50% 50%;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: auto;
+    padding-top: 70px; 
+    padding-bottom: 500px;
+    color: #fff;
+}
+
+.head-main {
+    text-shadow: 2px 4px 5px rgba(0,0,0,0.9);
+    font-variant:small-caps;
+    color: #C6DE41;
+    letter-spacing: 9pt;
+    word-spacing: 21pt;
+    font-size: 150px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2;
+    font-weight: 700;
+    border: 7px double #C6DE41;
+    padding: 20px;
+}
+
+
+
+/******************************
+      GALLERY  STYLES     
+********************************/
+
+.row > .column {
+    padding: 0 4px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: right;
+    width: 30%;
+}
+
+/* Modal background */
+.modal {
+    display: none; /* hide by default */
+    position: fixed; /* stay in place */
+    z-index: 1; /* sit on top */
+    padding-top: 100px; /* location of box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* enable scroll */
+    background-color: rgba(45, 110, 126, 0.8);
+}
+
+/* Modal content (image)*/
+.modal-content {
+    position: relative;
+    background-color:#fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* close button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover, 
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hide slides by default */
+.mySlides {
+    display: none;
+}
+
+/* next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* position 'next' button to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* on hover, add a black background with a little bit of see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* number text */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* caption text */
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+img.thumbnail {
+    opacity: 0.6;
+}
+
+.active,
+.thumbnail:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/******************************
+    CONTACT FORM  STYLES     
+********************************/
+#contact {
+    padding-bottom: 75px;
+}
+
+.form-spacer {
+    padding: 30px 39px;
+}
+
+.reservation {
+    width: 75%;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 0px auto;
+    background-color: rgba(45, 110, 126, 0.8);
+    box-shadow: -1px -1px 1px 0 rgba(0,0,0,0.1), 1px 2px 10px 0 rgba(0,0,0,0.5);
+}
+
+.reservation h2 {
+    width: 70%;
+    text-align: center;
+    margin: 0px auto;
+    color: #C6DE41;
+    font-weight: 500;
+    font-size: 1.3em;
+    letter-spacing: 2pt;
+    word-spacing: 0pt;
+}
+
+.reservation h2 span {
+    width: 70%;
+    text-align: center;
+    margin: 0px auto;
+    color: #090b0d;
+    font-weight: 700;
+    font-size: 1.5em;
+    font-variant: small-caps;
+    letter-spacing: 0.4pt;
+    word-spacing: 0.3pt;
+}
+
+.reservation p {
+    color: #090b0d;
+    margin: 0px auto;
+    padding-left: 12px;
+}
+
+
+.form-rsvp {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #090b0d;
+    padding: 12px 12px;
+    width: 70%;
+    border: 1px solid #808080;
+    margin: 2% auto;
+    border-radius: 7px;
+    background: #E1E8EB;/* #f5f5f5;*/
+    box-shadow: 2px 3px 3px 0 rgba(0,0,0,0.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rsvp {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #071C21;
+    padding: 4px;
+    width: 35%;
+    border-top: 1px solid #090b0d;
+    border-right: 2px solid #424549;
+    border-bottom: 2px solid #424549;
+    border-left: 1px solid #090b0d;
+    margin: 10px 1em;
+    border-radius: 7px;
+    background: #071C21;
+    box-shadow: inset 0px 3px 0px 0px rgba(5,5,5,0.15);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rsvp:hover,
+.textBox:hover{
+    box-shadow: 0 0 18px rgba(45, 110, 126, 0.8);
+}
+
+.textBox {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #071C21;
+    padding: 4px;
+    width:75%;
+    border-top: 1px solid #090b0d;
+    border-right: 2px solid #424549;
+    border-bottom: 2px solid #424549;
+    border-left: 1px solid #090b0d;
+    margin: 10px 1em;
+    border-radius: 7px;
+    background: #071C21;
+    box-shadow: inset 0px 3px 0px 0px rgba(5,5,5,0.15);
+    font-family: 'Montserrat', sans-serif;
+}
+.form-spacer {
+    padding: 30px 39px;
+}
+
+.terms {
+    margin: 30px 1px 0 0;
+    margin-top: 40px;
+    padding-left: 52px;
+    font-size: 14px;
+    line-height: 5px;
+    color: #090b0d;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    position: relative;
+    display: inline;
+    float: right;
+}
+
+.terms:hover {
+    color:#C6DE41;
+    text-decoration: underline;
+}
+
+.submit input[type="submit"] {
+    color: rgb(225,225,225); /* change color */
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px 3%;
+    padding: 5px 1px;
+    width: 25%;
+    font-size: 18px;
+    transition: border-color 0.3s color 0.3s background-color 0.3s;
+    border-radius: 9px;
+    background-color: #797a7b; /* change color */
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0.0.3);
+}
+
+.submit input[type="submit"]:hover {
+    color: #090b0d;
+    background-color: #8d8e8f; 
+    box-shadow: inset 1px 2px 15px 0 rgba(0,0,0,0.5);
+}
+/*******************************
+     FOOTER STYLES       
+**********************************/
+#footer {
+    background-color: rgba(45, 110, 126, 0.8);
+    color: #E1E8EB;
+    text-shadow: 2px 2px 8px 0 (0,0,0,0.4);
+    padding: 20px 50px 20px 50px;
+    text-align: center;
+}
+
+
+
+ /*==========================================================
+   @MEDIA QUERIES
+  ==========================================================*/
+  @media all and (max-width:640px) and (min-width:381px) {
+    .head-main {
+        font-size: 28px;
+    }
+  }
+  
+  @media all and (max-width:381px) and (min-width:200px) {
+      .head-main {
+          font-size: 24px;
+      }
+  }
+
+  @media  (min-width:768px) {
+      .container {
+          width: 750px;
+      }
+  }
+ 
+  @media  (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media  (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+
+
+
+

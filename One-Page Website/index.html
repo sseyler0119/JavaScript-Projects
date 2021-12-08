@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pawsitivity</title>
+  <meta char="utf-8" />
+  <link rel="stylesheet", href="css/one_page_website.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,500&display=swap" rel="stylesheet"> 
+  <script src="./js/one_page_website.js" defer></script>
+</head>
+
+<body>
+  <!--NAV Bar -->
+  <div class="wrap">
+    <div class="menu-container">
+      <ul class="menu">
+        <a href="#home" id="link">
+          <li>HOME</li>
+        </a>
+        <a href="#gallery" id="link">
+          <li>GALLERY</li>
+        </a>
+        <a href="#contact" id="link">
+          <li>CONTACT</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <!-- End Nav -->
+
+  <!-- HOME -->
+    <div id="home">
+      <div class="container">
+        <div class="text-center">
+          <span class="head-main">Pawsitivity</span>
+        </div>
+      </div>
+    </div>
+  <!-- end Home -->
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <h1>Gallery</h1>
+      <!--row 1-->
+      <div class="row">
+        <div class="column">
+          <img src="./images/thumbs/thumb1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="./images/thumbs/thumb2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="./images/thumbs/thumb3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </div>
+      </div> <!-- end row 1-->
+
+
+      <!--row 2-->
+      <div class="row">
+        <div class="column">
+          <img src="./images/thumbs/thumb4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="./images/thumbs/thumb5.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="./images/thumbs/thumb6.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
+        </div>
+      </div> <!--end row 2-->
+
+      <!--row 3-->
+      <div class="row">
+        <div class="column">
+          <img src="./images/thumbs/thumb7.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="./images/thumbs/thumb8.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="./images/thumbs/thumb9.jpeg" onclick="openModal();currentSlide(9)" class="hover-shadow">
+        </div>
+      </div> <!--end row 3-->
+
+      <!--modal lightbox-->
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+          <!--slide 1-->
+          <div class="mySlides">
+            <div class="numbertext">1 / 9</div>
+            <img src="./images/dog1.jpg" style="width:100%">
+          </div>
+
+          <!--slide 2-->
+          <div class="mySlides">
+            <div class="numbertext">2 / 9</div>
+            <img src="./images/dog2.jpg" style="width:100%">
+          </div>
+
+            <!--slide 3-->
+            <div class="mySlides">
+            <div class="numbertext">3 / 9</div>
+            <img src="./images/dog3.jpg" style="width:100%">
+          </div>
+
+          <!--slide 4-->
+          <div class="mySlides">
+            <div class="numbertext">4 / 9</div>
+            <img src="./images/dog4.jpg" style="width:100%">
+          </div>
+
+          <!--slide 5-->
+          <div class="mySlides">
+            <div class="numbertext">5 / 9</div>
+            <img src="./images/dog5.jpg" style="width:100%">
+          </div>
+
+          <!--slide 6-->
+          <div class="mySlides">
+            <div class="numbertext">6 / 9</div>
+            <img src="./images/dog6.jpg" style="width:100%">
+          </div>
+
+          <!--slide 7-->
+          <div class="mySlides">
+            <div class="numbertext">7 / 9</div>
+            <img src="./images/dog7.jpg" style="width:100%">
+          </div>
+
+          <!--slide 8-->
+          <div class="mySlides">
+            <div class="numbertext">8 / 9</div>
+            <img src="./images/dog8.jpg" style="width:100%">
+          </div>  
+
+          <!--slide 9-->
+          <div class="mySlides">
+            <div class="numbertext">9 / 9</div>
+            <img src="./images/dog9.jpeg" style="width:100%">
+          </div>
+
+          <!--next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <!--caption text-->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+          <!--Thumbnail image controls-->
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb1.jpg" onclick="currentSlide(1)" alt="Pumpkin">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb2.jpg" onclick="currentSlide(2)" alt="Chalupa">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb3.jpg" onclick="currentSlide(3)" alt="Chedder">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb4.jpg" onclick="currentSlide(4)" alt="Joltin' Joe">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb5.jpg" onclick="currentSlide(5)" alt="Marvin">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb6.jpg" onclick="currentSlide(6)" alt="Gertie">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb7.jpg" onclick="currentSlide(7)" alt="Layla">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb8.jpg" onclick="currentSlide(8)" alt="Hopper">
+          </div>
+
+          <div class="column">
+            <img class="thumbnail" src="./images/thumbs/thumb9.jpeg" onclick="currentSlide(9)" alt="Lupin">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end Gallery -->
+ 
+
+  <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h1 class="heading-padding">Reserve your pup, now!</h1>
+        <div class="reservation">
+          <h2><span>Your doggy date is waiting for you.<br />
+            Reserve your pup today!</span></h2>
+        
+
+        <!-- CONTACT Form -->
+        <div class="form-rsvp">
+          <form action="" method="post">
+         
+            <input class="rsvp" type="text" value placeholder="First Name" />
+            <input class="rsvp" type="text" value placeholder="Last Name" />
+            <input class="rsvp" type="email" value placeholder="Email" />
+            <input class="rsvp" type="tel" id="phone" name="phone" placeholder="Phone 123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <p>Who would you like to schedule a playdate for? </p>
+            <input type="checkbox" id="dog" name="dog" value="Dog">
+            <label for="dog">I want to schedule a playdate for my dog(s)</label><br>
+            <input type="checkbox" id="human" name="human" value="People">
+            <label for="human"> I would like to schedule a playdate for a person/people</label><br>
+            <textarea class="textBox" name="message" value placeholder="Tell us about your event..."></textarea>
+
+            <div class="form-spacer">
+              <label class="terms">Terms and Condtions</label>
+            </div> <!--end form-spacer -->
+          
+            <div class="submit">
+              <input type="submit" value="Submit" />
+            </div> <!--end submit-->
+          </form> <!-- end form -->
+        </div><!--end form-rsvp-->
+      </div> <!--end reservation-->
+    </div> <!--end container-->
+    </section>
+  <!-- end Contact -->
+</body>
+
+<!-- FOOTER -->
+<div id="footer">
+  www.pawstivity.com &nbsp;|&nbsp; &copy;2021
+</div>
+<!-- end FOOTER -->
+
+</html>
