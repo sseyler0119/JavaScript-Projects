@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+            
+            <!--create new content box with button, change the content when button is clicked-->
+            <br><br>
+            <div class="content" id="demo">
+                <h2>Demo "onreadystatechange" Property: </h2>
+                <button  class="button" type="button" onclick="loadDoc()">Change content</button>
+            </div>
+
+		<script type="text/javascript">
+			
+            // STEP 1: setup the xml http request object
+            var ajax = new XMLHttpRequest();
+            
+            // STEP 2: prpeare the open ajax request
+            ajax.open('GET','content.html');
+
+            // STEP 3: define the ajax response callback method
+            ajax.onreadystatechange = function() 
+            {
+                if(ajax.readyState == 4)
+                {
+                    document.getElementById("content").innerHTML = ajax.responseText;
+                }
+            }
+
+            // STEP 4: send the ajax request for data
+            function getContent() 
+            {
+                ajax.send();
+                document.getElementById("btn_content").style.display = "none"; // hide the button
+            }
+
+
+            //************************* demo onreadystatechange ******************************
+          
+            // when "change content" button is clicked, the loadDoc() function will replace the content
+            //      with the text from the file testAjax.txt
+            function loadDoc()
+            {
+                // setup the xml http request object
+                var test = new XMLHttpRequest(); 
+                // define the ajax response callback method
+                test.onreadystatechange = function ()
+                {
+                    // if readyState = 4 "request finished and response is ready" AND status = 200 "OK"
+                    if(this.readyState == 4 && this.status == 200)
+                    {
+                        // repace content with text where HTML element has matching id
+                        document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                };
+                test.open("Get", "ajaxTest.txt");
+                test.send();
+            }
+		</script>
+    </body>
+</html>
