@@ -7,7 +7,7 @@ This repository contains practice projects that I've worked on with The Tech Aca
 - <a href="https://github.com/sseyler0119/JavaScript-Projects/tree/main/TicTacToe">Tic-Tac-Toe Game</a>
 - <a href="https://github.com/sseyler0119/JavaScript-Projects/tree/main/Calculator">Calculator</a>
 - <a href="https://github.com/sseyler0119/JavaScript-Projects/tree/main/One-Page%20Website">Pawsitivity Site</a>
-- <a href="hhttps://github.com/sseyler0119/JavaScript-Projects/tree/main/bootstrap4_project">Movie Theater Site </a>
+- <a href="https://github.com/sseyler0119/JavaScript-Projects/tree/main/bootstrap4_project">Movie Theater Site </a>
 
 ### Pizza Menu
 This project is an interactive menu that allows the user to order a pizza by selecting the size and various toppings. It then takes the input provided from the user and calculates the price for the order. The order and total are then displayed on the menu page. 
