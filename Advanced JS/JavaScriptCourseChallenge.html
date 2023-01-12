@@ -41,6 +41,12 @@
             Enter name: <input type="text" name="fname" >
             <input type="submit" value="Submit">
         </form>
+
+        <h4> Validation Tests</h4>
+        <p>Enter message below:</p>
+        <input id="valid" type="number" min="1" max="100" required>
+        <p id="respMessage"></p>
+        <button onclick="isValid()">Check if message is valid</button>
         <script src="./JavaScriptChallenge.js"></script>
     </body>
 </html>

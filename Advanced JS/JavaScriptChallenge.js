@@ -169,3 +169,13 @@ function validateForm() {
     }
 }
 
+function isValid() {
+    const message = document.getElementById("valid");
+    if(!message.checkValidity()) {
+        document.getElementById('respMessage').innerHTML = message.validationMessage;
+    } 
+    else {
+        document.getElementById('respMessage').innerHTML = "Valid Input Received";
+    }
+}
+
