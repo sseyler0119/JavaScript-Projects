@@ -1,7 +1,9 @@
-// Brin in the express server and create application
+// Bring in the express server and create application
 let express = require('express');
-let app = express();
-let pieRepo = require('./repos/pieRepo');
+let app = express(); // instantiate express object
+let pieRepo = require('./repos/pieRepo'); // import pieRepo module
+let errorHelper = require('./helpers/errorHelpers'); // import errorHelper module for exception handling
+const { errorHandler } = require('./helpers/errorHelpers');
 
 // use the express Router object
 let router = express.Router();
@@ -21,7 +23,7 @@ router.get('/', function (req, res, next) {
             "data": data
         });
     }, function(err) {
-        next(err);
+        next(err); 
     });
 });
 
@@ -143,9 +145,35 @@ router.delete('/:id', function(req, res, next) {
 })
 
 
+router.patch('/:id', function(req, res, next) {
+    pieRepo.getById(req.params.id, function(data) {
+        if(data) {
+            // attempt to update data
+            pieRepo.update(req.body, req.params.id, function(data) {
+                res.status(200).json({
+                    "status": 200,
+                    "statusText": "OK",
+                    "message": "Pie '" + req.params.id + "' patched.",
+                    "data": data
+                });
+            });
+        }
+        
+    })
+});
+
 
 // configure router so all routes are prevised with /api/v1
 app.use('/api/', router);
+
+// configure exception logger to console
+app.use(errorHelper.logErrorsToConsole);
+//configure exception logger to file
+app.use(errorHelper.logErrorsToFile);
+//configure client error handler
+app.use(errorHelper.clientErrorHandler);
+// configure catch-all exception middleware last
+app.use(errorHelper.errorHandler);
 
 // create server to listen on port 5000
 var server = app.listen(5000, function () {
